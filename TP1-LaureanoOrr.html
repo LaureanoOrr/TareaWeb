@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titulo</title>
+    <script>
+     
+                function insertarHolaMundoPorID() 
+                {
+                    alert("Comenzando remplazo.");
+                    document.getElementById("myP").innerHTML = "Hello World.";
+                }
+                function insertarHolaMundoPorClassName()
+                {
+                    alert("Cambiando el segundo texto.");
+                    document.getElementsByClassName("test")[0].innerHTML ="Hello World.";
+                }
+                function insertarFilas()
+                {
+                var tbody = document.getElementsByTagName("tbody")[0].insertRow(-1)
+                let row1 = body.insertCell(0)
+                row1.innerHTML= "Espacio"
+                let row2 = body.insertCell(1)
+                row2.innerHTML = "Blanco"
+                }
+
+                function eliminarFilas()
+                {
+                var body = document.getElementsByTagName ("tbody")[0].deleteRow(-1)
+                }
+    </script>
+</head>
+
+<body>
+    <p id="myP">Este texto se tiene que convertir en Hello World.</p>
+    
+    <p class="test">Este texto se tiene que convertir en Hello World PERO por el nombre de clase.</p>
+
+    <p class="test">Este texto no se tiene que convertir.</p>
+   
+<button onclick="insertarHolaMundoPorID()">Metodo 1</button>
+
+<button onclick="insertarHolaMundoPorClassName()">Metodo 2</button>
+
+<table style="border: 1px solid">
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+    </thead>
+        <tbody></tbody>
+    </table>
+        <br>
+    <button onclick="insertarFilas()">Insertar fila.</button>
+    <button onclick="eliminarFilas()">Eliminar fila.</button>
+   
+
+
+
+
+</body>
+
+</html>
